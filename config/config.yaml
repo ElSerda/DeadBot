@@ -1,0 +1,60 @@
+# v0.1.0
+
+alert:
+  cpu:
+    warning: 70
+    critical: 90
+  ram:
+    warning: 80
+    critical: 95
+  gpu:
+    warning: 85
+    critical: 99
+  disk:
+    warning: 65
+    critical: 80
+  vram:
+    warning: 70
+    critical: 90
+
+
+bot:
+  cooldown: 10
+  debug: true
+  enabled_commands:
+  - diag
+  - graph
+  - export
+  - status
+  - overlay
+  - sysinfo
+  - help
+  language: fr
+  log_ia: true
+  name: deadbot
+export:
+  auto_save: true
+  format: csv
+  path: ./logs
+local_llm:
+  context_length: 2048
+  gpu_layers: 32
+  last_model: mistral-nemo-instruct-2407-q4_k_m.gguf
+  max_tokens: 128
+  model_path: ./models
+  model_type: mistral
+ollama:
+  url: "http://localhost:11434"
+  model: "llama3:8b-instruct-q4_K_M"
+openai:
+  model: "gpt-4o"
+
+modules:
+  diag: true
+  eventlog: true
+  notif: false
+  perfscan: true
+overlay:
+  file: ./deadbot_overlay.html
+  refresh: 2
+  style: dark

@@ -1,0 +1,21 @@
+
+
+{
+  "version": "v0.1.0",
+  "sampling_interval": 0.5,
+  "critical_thresholds": {
+    "cpu_usage": 90,
+    "gpu_usage": 90,
+    "ram_usage": 90,
+    "disk_usage": 95
+  },
+  "overlay": {
+    "enabled": true,
+    "position": "top_right"
+  },
+  "logging": {
+    "level": "INFO",
+    "export_format": "csv",
+    "export_path": "./deadbot_logs/"
+  }
+}

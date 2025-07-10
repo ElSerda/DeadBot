@@ -1,0 +1,75 @@
+{
+  "version": "v0.1.0",
+  "schema_version": "1.0",
+  "name": "DeadBot Diagnostic Plugin",
+  "description": "AGPLv3 plugin for G-Assist. Exposes system metrics, diagnostic (diagnose_env), real-time graph, and log export for streamers, reviewers, and crowd gamers.",
+  "author": "ElSerda & Contributors",
+  "license": "AGPL-3.0-or-later",
+  "executable": "./src/plugin.py",
+  "functions": [
+    {
+      "name": "initialize",
+      "description": "Initializes the DeadBot plugin (startup routines, config load).",
+      "tags": ["init", "boot"],
+      "status": "stable",
+      "properties": {}
+    },
+    {
+      "name": "shutdown",
+      "description": "Shuts down the DeadBot plugin, saves state and cleanup.",
+      "tags": ["stop", "exit"],
+      "status": "stable",
+      "properties": {}
+    },
+    {
+      "name": "diagnose_env",
+      "description": "Runs full diagnostic on system metrics (uses params['metrics'] if provided, else live scan).",
+      "tags": ["diagnostic", "health", "verdict"],
+      "status": "stable",
+      "properties": {
+        "metrics": {
+          "type": "object",
+          "description": "System metrics dict (cpu, ram, disk, gpu, vram, etc).",
+          "required": false
+        },
+        "symptom": {
+          "type": "string",
+          "description": "Optional user symptom/context ('stutter', 'freeze', etc).",
+          "required": false
+        }
+      }
+    },
+    {
+      "name": "show_graph",
+      "description": "Displays a real-time graph of system metrics (matplotlib, may block).",
+      "tags": ["graph", "visualization", "demo"],
+      "status": "WIP",
+      "properties": {
+        "duration": {
+          "type": "integer",
+          "description": "Duration in seconds for graph display.",
+          "required": false
+        }
+      }
+    },
+    {
+      "name": "export_log",
+      "description": "Exports the latest system scan as CSV or JSON.",
+      "tags": ["export", "log", "csv", "json"],
+      "status": "stable",
+      "properties": {
+        "format": {
+          "type": "string",
+          "description": "Export format: csv or json.",
+          "enum": ["csv", "json"],
+          "required": false
+        },
+        "path": {
+          "type": "string",
+          "description": "Destination path for exported log file.",
+          "required": false
+        }
+      }
+    }
+  ]
+}

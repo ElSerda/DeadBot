@@ -1,0 +1,37 @@
+# requirements.txt
+# v0.1.0
+
+# Version Python minimale pour support type & dataclass
+#python_requires>=3.8
+
+fastapi>=0.105.0
+uvicorn[standard]>=0.24.0
+
+# Dépendances système et hardware
+psutil>=5.9.0          # Pour monitor CPU, RAM, Disk
+pynvml>=11.5.0         # Accès métriques NVIDIA GPU
+
+# Pour interface graphique
+matplotlib>=3.7.0      # Graphe en temps réel (show_graph)
+
+# Pour build exécutable G-Assist (PyInstaller compatible)
+pywin32>=223           # Accès aux pipes Windows
+pyinstaller==6.11.0
+
+# Pour parsing config YAML
+pyyaml>=6.0
+
+# (Optionnel) pour future intégration Twitch/Discord
+requests>=2.31.0       # Webhook ou API Discord
+
+# Interface console 
+windows-curses      #Curse replacement
+
+# Interface Graphique
+gradio>=4.0.0
+pywebview>=4.0
+
+# LLM
+ctransformers
+gputil>=1.4.0   # Scan cross-platform NVIDIA/AMD/iGPU (wrapper GPU metrics)
+

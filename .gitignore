@@ -1,0 +1,58 @@
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs and bench outputs
+logs/
+benchs/
+
+# Models directory (tu peux exclure les vrais modèles lourds si besoin)
+models/*.gguf
+models/*.bin
+models/*.pt
+models/*.ckpt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor config files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Python packaging
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# PyInstaller
+*.manifest
+*.spec
+build/
+
+# Ignore pip cache
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Others
+*.log
+*.tmp
+*.temp
+
+# Ignore your PowerShell scripts if you want
+# *.ps1
+
+# Optional: exclude coverage reports
+.coverage
+htmlcov/
